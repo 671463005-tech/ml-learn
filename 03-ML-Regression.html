@@ -169,22 +169,73 @@
             </div>
         </section>
     
-                <!-- Section: Practical Lab -->
-        <section class="bg-gradient-to-r from-slate-800 to-slate-950 text-white rounded-2xl shadow-xl p-6 md:p-8 mb-8 border border-slate-700 mt-8">
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-                <div class="flex-1">
-                    <span class="text-xs font-bold uppercase tracking-wider text-sky-400 bg-sky-955/50 px-3 py-1 rounded-full border border-sky-800/30">ใบงานปฏิบัติการ (Practical Lab)</span>
-                    <h3 class="text-xl font-bold mt-2">ทดลองลงมือทำด้วย Jupyter Notebook</h3>
-                    <p class="text-slate-300 text-sm mt-2 font-semibold text-sky-200">ไฟล์แล็บ: <code class="bg-slate-900 px-2 py-0.5 rounded text-yellow-300 font-mono text-xs">04_training_linear_models.ipynb</code></p>
-                    <p class="text-slate-400 text-xs mt-1 leading-relaxed">เรียนรู้และฝึกฝนการเทรนโมเดลเชิงเส้น (Linear Models) การทำงานของ Gradient Descent แบบต่างๆ และการวิเคราะห์สมการเชิงเส้น</p>
+                        <!-- Section: Practical Labs -->
+        <section class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-950 text-white rounded-2xl shadow-xl p-6 md:p-8 mb-8 border border-slate-800 mt-8">
+            <div class="mb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-sky-400 bg-sky-950/60 px-3 py-1 rounded-full border border-sky-900/30">ใบงานปฏิบัติการ (Practical Labs)</span>
+                <h3 class="text-xl font-bold mt-2 text-slate-100">ลงมือปฏิบัติด้วย Jupyter Notebook</h3>
+                <p class="text-slate-400 text-xs mt-1">เสริมสร้างทักษะภาคปฏิบัติผ่านแล็บทดลอง ทั้งแล็บหลักอ้างอิงตำราเรียน และแล็บเสริมเพื่อช่วยอธิบายเนื้อหาให้เข้าใจง่ายยิ่งขึ้น</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+                <!-- Main Lab Card -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col justify-between hover:border-indigo-900 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-400 font-semibold">ใบงานหลัก (Main Lab)</span>
+                            <span class="text-[10px] font-medium text-slate-500 font-mono">Repo: handson-ml3</span>
+                        </div>
+                        <h4 class="text-sm font-bold text-slate-200 bg-slate-950/40 p-2 rounded border border-slate-800 font-mono mb-2">04_training_linear_models.ipynb</h4>
+                        <p class="text-xs text-slate-400 mt-1 leading-relaxed">เรียนรู้และฝึกฝนการเทรนโมเดลเชิงเส้น (Linear Models) การทำงานของ Gradient Descent แบบต่างๆ และการวิเคราะห์สมการเชิงเส้น</p>
+                    </div>
+                    <div class="flex gap-2 mt-4">
+                        <a href="https://github.com/anusornc/handson-ml3/blob/main/04_training_linear_models.ipynb" target="_blank" rel="noopener" class="flex-1 text-center bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold py-2 px-3 rounded-lg border border-slate-700 transition">
+                            GitHub
+                        </a>
+                        <a href="https://colab.research.google.com/github/anusornc/handson-ml3/blob/main/04_training_linear_models.ipynb" target="_blank" rel="noopener" class="flex-1 text-center bg-sky-500 hover:bg-sky-600 text-white text-xs font-semibold py-2 px-3 rounded-lg transition shadow-sm hover:shadow">
+                            Colab 🚀
+                        </a>
+                    </div>
                 </div>
-                <div class="flex flex-wrap gap-2 shrink-0">
-                    <a href="https://github.com/anusornc/handson-ml3/blob/main/04_training_linear_models.ipynb" target="_blank" rel="noopener" class="inline-flex items-center space-x-2 bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold px-4 py-2.5 rounded-lg border border-slate-600 transition shadow-sm">
-                        <span>ดูบน GitHub</span>
-                    </a>
-                    <a href="https://colab.research.google.com/github/anusornc/handson-ml3/blob/main/04_training_linear_models.ipynb" target="_blank" rel="noopener" class="inline-flex items-center space-x-2 bg-sky-500 hover:bg-sky-600 text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition shadow-sm">
-                        <span>เปิดใน Google Colab 🚀</span>
-                    </a>
+
+                <!-- Supplementary Labs Card -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col justify-between hover:border-emerald-950 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 font-semibold">ใบงานเสริม (Supplementary Labs)</span>
+                            <span class="text-[10px] font-medium text-slate-500">หัวข้อขยายความเข้าใจเพิ่มเติม</span>
+                        </div>
+                        <div class="space-y-2.5 mt-2">
+                            <div class="flex items-center justify-between p-3 bg-slate-950/40 border border-slate-800 rounded-lg hover:border-slate-700 transition">
+                                <div class="flex-1 min-w-0 pr-2">
+                                    <p class="text-xs font-semibold text-slate-200 truncate">Linear Regression Deep Dive</p>
+                                    <p class="text-[9px] text-slate-500 font-mono truncate">Repo: python-ml-notebooks</p>
+                                </div>
+                                <div class="flex gap-1.5 shrink-0">
+                                    <a href="https://github.com/anusornc/python-ml-notebooks/blob/master/notebooks/2-linear-regression-deep-dive.ipynb" target="_blank" rel="noopener" class="p-1 px-2.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 text-[10px] rounded font-semibold transition">
+                                        GitHub
+                                    </a>
+                                                                        <a href="https://colab.research.google.com/github/anusornc/python-ml-notebooks/blob/master/notebooks/2-linear-regression-deep-dive.ipynb" target="_blank" rel="noopener" class="p-1 px-2.5 bg-sky-500 hover:bg-sky-600 text-white text-[10px] rounded font-semibold transition shadow-sm">
+                                        Colab
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-slate-950/40 border border-slate-800 rounded-lg hover:border-slate-700 transition">
+                                <div class="flex-1 min-w-0 pr-2">
+                                    <p class="text-xs font-semibold text-slate-200 truncate">Linear Regression Practice Lab</p>
+                                    <p class="text-[9px] text-slate-500 font-mono truncate">Repo: ML-For-Beginners</p>
+                                </div>
+                                <div class="flex gap-1.5 shrink-0">
+                                    <a href="https://github.com/anusornc/ML-For-Beginners/blob/main/2-Regression/3-Linear/solution/index.ipynb" target="_blank" rel="noopener" class="p-1 px-2.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 text-[10px] rounded font-semibold transition">
+                                        GitHub
+                                    </a>
+                                                                        <a href="https://colab.research.google.com/github/anusornc/ML-For-Beginners/blob/main/2-Regression/3-Linear/solution/index.ipynb" target="_blank" rel="noopener" class="p-1 px-2.5 bg-sky-500 hover:bg-sky-600 text-white text-[10px] rounded font-semibold transition shadow-sm">
+                                        Colab
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
