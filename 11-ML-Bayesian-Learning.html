@@ -55,10 +55,12 @@
     
     
     
+    
+    
 
         
 
-                        <!-- Header -->
+                            <!-- Header -->
     <header class="bg-gradient-to-r from-indigo-950 via-slate-900 to-blue-955 text-white py-12 shadow-lg relative overflow-hidden border-b border-white/10">
         <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808010_1px,transparent_1px),linear-gradient(to_bottom,#80808010_1px,transparent_1px)] bg-[size:20px_20px] opacity-20"></div>
         <div class="container mx-auto px-4 max-w-4xl text-center relative z-10">
@@ -200,6 +202,7 @@
     <footer class="bg-slate-800 text-white py-6 mt-12 text-center text-sm">
         <p>&copy; 2023 ML Learn by Anusorn Chaikaew</p>
     </footer>
+
 
 
 
@@ -419,6 +422,45 @@
                 if (el.tagName === 'SECTION' || el.classList.contains('content-panel')) {
                     el.className = 'w-full text-slate-200 space-y-6 bg-transparent border-0 shadow-none p-0 m-0';
                 }
+                
+                // Transform light backgrounds and dark text to be dark-mode readable in slides
+                el.querySelectorAll('*').forEach(subEl => {
+                    if (subEl.classList && subEl.classList.length > 0) {
+                        let hasLightBg = false;
+                        let bgClassToReplace = "";
+                        subEl.classList.forEach(cls => {
+                            if (cls === 'bg-white' || (cls.startsWith('bg-') && (cls.endsWith('-50') || cls.endsWith('-100')))) {
+                                hasLightBg = true;
+                                bgClassToReplace = cls;
+                            }
+                        });
+                        
+                        if (hasLightBg) {
+                            if (!subEl.hasAttribute('data-original-class')) {
+                                subEl.setAttribute('data-original-class', subEl.className);
+                            }
+                            subEl.className = subEl.className.replace(bgClassToReplace, 'bg-slate-900/60 border border-indigo-950/50');
+                        }
+                        
+                        let hasDarkText = false;
+                        subEl.classList.forEach(cls => {
+                            if (cls === 'text-black' || 
+                                (cls.startsWith('text-') && (cls.endsWith('-700') || cls.endsWith('-800') || cls.endsWith('-900') || cls.endsWith('-950')))) {
+                                hasDarkText = true;
+                            }
+                        });
+                        
+                        if (hasDarkText) {
+                            if (!subEl.hasAttribute('data-original-class')) {
+                                subEl.setAttribute('data-original-class', subEl.className);
+                            }
+                            let newClass = subEl.className;
+                            newClass = newClass.replace(/text-black/g, 'text-slate-200');
+                            newClass = newClass.replace(/text-(gray|slate|neutral|stone|indigo|blue|green|purple|orange|red|yellow)-(700|800|900|950)/g, 'text-slate-200');
+                            subEl.className = newClass;
+                        }
+                    }
+                });
                 
                 el.querySelectorAll('h2').forEach(h2 => {
                     if (!h2.hasAttribute('data-original-class')) h2.setAttribute('data-original-class', h2.className);
