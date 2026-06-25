@@ -806,26 +806,24 @@ polynomial_regression.fit(X, y)</code></pre>
                 <div class="slide-container">
                     <span class="lab-badge badge-theory">ML Concept</span>
                     <h2>10.1 รูปภาพจำลองของอาการ Underfitting & Overfitting</h2>
-                    <p style="font-size: 0.82rem; margin-bottom: 0.3rem;">เปรียบเทียบลักษณะการทำนายของโมเดลที่ระดับความซับซ้อนต่างกัน (จากรูปในโค้ดทดลอง):</p>
+                    <p style="font-size: 0.82rem; margin-bottom: 0.5rem;">เปรียบเทียบลักษณะการทำนายและฟิตโมเดลที่ระดับความซับซ้อนต่างกัน (เปรียบเทียบ 3 รูปแบบ):</p>
                     
-                    <div class="grid-container" style="grid-template-columns: 1.2fr 0.8fr; align-items: center; gap: 1.5rem;">
-                        <div class="grid-item" style="text-align: center;">
-                            <img src="../images/training_linear_models/high_degree_polynomials_plot.png" class="slide-img" style="max-height: 290px; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
-                            <p style="font-size: 0.72rem !important; color: var(--text-muted); margin-top: 0.4rem;">รูปเปรียบเทียบการปรับความซับซ้อน (ดีกรี 1, 2, และ 300)</p>
+                    <div style="text-align: center; margin-bottom: 0.8rem;">
+                        <img src="../images/training_linear_models/overfitting_underfitting_comparison.png" class="slide-img" style="max-height: 230px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); background: white; padding: 8px;">
+                    </div>
+                    
+                    <div class="grid-container" style="grid-template-columns: repeat(3, 1fr); gap: 0.8rem;">
+                        <div style="background: rgba(239, 68, 68, 0.1); border-left: 4px solid #ef4444; padding: 0.5rem 0.8rem; border-radius: 4px; text-align: left;">
+                            <h5 style="color: #ef4444; margin: 0 0 0.1rem 0; font-size: 0.8rem;">🔴 Underfitting (High Bias)</h5>
+                            <p style="font-size: 0.68rem; margin: 0; line-height: 1.25; color: #cbd5e1;">โมเดลเรียบง่ายเกินไป ไม่สามารถเรียนรู้โครงสร้างหลักของข้อมูลได้ ทำให้เกิดข้อผิดพลาดสูงทั้งข้อมูลสอนและทดสอบ</p>
                         </div>
-                        <div class="grid-item">
-                            <div style="background: rgba(239, 68, 68, 0.1); border-left: 4px solid #ef4444; padding: 0.5rem 0.8rem; border-radius: 4px; margin-bottom: 0.6rem; text-align: left;">
-                                <h5 style="color: #ef4444; margin: 0 0 0.1rem 0; font-size: 0.82rem;">🔴 ดีกรี 1 (1 Degree) — Underfitting</h5>
-                                <p style="font-size: 0.72rem; margin: 0; line-height: 1.25; color: #cbd5e1;">เส้นตรงสีแดงทื่อ ไม่สามารถโค้งตามจุดข้อมูลจริงได้ โมเดลเรียบง่ายเกินไป (High Bias)</p>
-                            </div>
-                            <div style="background: rgba(59, 130, 246, 0.1); border-left: 4px solid #3b82f6; padding: 0.5rem 0.8rem; border-radius: 4px; margin-bottom: 0.6rem; text-align: left;">
-                                <h5 style="color: #3b82f6; margin: 0 0 0.1rem 0; font-size: 0.82rem;">🔵 ดีกรี 2 (2 Degrees) — Good Fit</h5>
-                                <p style="font-size: 0.72rem; margin: 0; line-height: 1.25; color: #cbd5e1;">เส้นประสีน้ำเงินโค้งตามแนวโน้มแท้จริงของข้อมูลพาราโบลาได้พอดี มีความเรียบง่ายและทำนายได้ถูกต้องที่สุด</p>
-                            </div>
-                            <div style="background: rgba(16, 185, 129, 0.1); border-left: 4px solid #10b981; padding: 0.5rem 0.8rem; border-radius: 4px; text-align: left;">
-                                <h5 style="color: #10b981; margin: 0 0 0.1rem 0; font-size: 0.82rem;">🟢 ดีกรี 300 (300 Degrees) — Overfitting</h5>
-                                <p style="font-size: 0.72rem; margin: 0; line-height: 1.25; color: #cbd5e1;">เส้นทึบสีเขียวคดเคี้ยวพยายามวิ่งตัดผ่านจุดรบกวน (Noise) ทุกจุด ส่งผลเสียทำให้คำนวณนอกช่วงพลาดสูง (High Variance)</p>
-                            </div>
+                        <div style="background: rgba(59, 130, 246, 0.1); border-left: 4px solid #3b82f6; padding: 0.5rem 0.8rem; border-radius: 4px; text-align: left;">
+                            <h5 style="color: #3b82f6; margin: 0 0 0.1rem 0; font-size: 0.8rem;">🔵 Optimal / Good Fit</h5>
+                            <p style="font-size: 0.68rem; margin: 0; line-height: 1.25; color: #cbd5e1;">มีความลงตัวพอดีระหว่างความซับซ้อนของโมเดลกับลักษณะข้อมูล สามารถนำไปทำนายข้อมูลใหม่ภายนอกได้อย่างแม่นยำ</p>
+                        </div>
+                        <div style="background: rgba(16, 185, 129, 0.1); border-left: 4px solid #10b981; padding: 0.5rem 0.8rem; border-radius: 4px; text-align: left;">
+                            <h5 style="color: #10b981; margin: 0 0 0.1rem 0; font-size: 0.8rem;">🟢 Overfitting (High Variance)</h5>
+                            <p style="font-size: 0.68rem; margin: 0; line-height: 1.25; color: #cbd5e1;">โมเดลซับซ้อนเกินไป ท่องจำข้อมูลฝึกสอนและสัญญาณรบกวน (Noise) ทำให้ความแม่นยำตกทันทีเมื่อเจอข้อมูลใหม่</p>
                         </div>
                     </div>
                 </div>
